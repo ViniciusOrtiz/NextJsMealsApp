@@ -1,3 +1,4 @@
+import Header from "@/components/header/header";
 import "./globals.css";
 
 export const metadata = {
@@ -34,6 +35,8 @@ export default function RootLayout({
           </svg>
         </div>
 
+        <Header/>
+        
         {children}
       </body>
     </html>
