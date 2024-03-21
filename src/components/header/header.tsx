@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import logoImg from '@/assets/logo.png';
 
-import styles from '@/components/header/header.module.css';
+import styles from './header.module.css';
 
 export default function Header() {
   return (
