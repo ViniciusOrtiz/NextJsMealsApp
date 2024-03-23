@@ -13,7 +13,7 @@ export async function getMeals() {
     return db.prepare('SELECT * FROM meals').all();
 }
 
-export async function getMeal(slug: any) {
+export function getMeal(slug: any) {
     return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
 }
 

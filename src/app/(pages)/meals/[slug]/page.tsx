@@ -3,8 +3,21 @@ import { getMeal } from '../../../../lib/meals';
 import styles from './page.module.css';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({params}: any) {
+  var meal = getMeal(params.slug) as any
+
+  if(!meal) {
+    notFound()
+  }
+  
+  return {
+    title: meal.title,
+    description: meal.summary
+  };
+}
+
 export default async function MealsSlugPage({params}: any) {
-  var meal = await getMeal(params.slug) as any
+  var meal = getMeal(params.slug) as any
 
   if(!meal) {
     notFound()
